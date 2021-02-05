@@ -1,0 +1,60 @@
+---
+title: "fluke-datathon"
+author: "Gavin Fay"
+date: "2/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(googlesheets4)
+library(tidyverse)
+```
+
+## Reading in the survey responses
+
+```{r read-data}
+datafile <- [ask @gavinfay for the URL to the data sheet]
+survey_data  <- read_sheet(datafile, col_types = "c")
+survey_data
+
+## Optional renaming of columns in dataset
+names(survey_data)<-c("Timestamp",
+                               "Q1_Concern1_Reduced.retention",
+                               "Q1_Concern2_Reduced.satisfaction",
+                               "Q1_Concern3_Reduced.interest",
+                               "Q1_Concern4_Reduced.patronage",
+                               "Q1_Concern5_Female.stock.impact",
+                               "Q1_Concern6_Overall.stock.impact",
+                               "Q1_Concern7_Mortality.estimate",
+                               "Q1_Concern8_Harvest.limits",
+                               "Q1_Concern9_Data.quality",
+                               "Q1_Concern10_Discarding.techniques",
+                               "Q1_Concern11_Gear",
+                               "Q1_Concern12_Fairness",
+                               "Q1_Concern13_Noncompliance",
+                               "Q1_Concern14_Other.restriction",
+                               "Q1_Concern15_Information.response",
+                               "Q1_Concern16_Stakeholder.response",
+                               "Q2_Other_Concerns",
+                               "Q3_Other_Fishery_Concerns",
+                               "Q4_Objectives",
+                               "Q5_Other_Objectives",
+                               "Q6_Alternatives",
+                               "Q7_Other_Alternatives",
+                               "Q8_Data_Sources",
+                               "Q9_Uncertainties",
+                               "Q10_Nominations",
+                               "Participation_Interest",
+                               "Name",
+                               "Email.Address",
+                               "Q11_Productive_Member",
+                               "Q12_Core_Group_Interest",
+                               "Q13a_Role",
+                               "Q13_Primary_Role",
+                               "Q14a_State",
+                               "Q14b_State_Representation",
+                               "Q15E_xperience",
+                               "Your.Name",
+                               "Your.Email")
+```
